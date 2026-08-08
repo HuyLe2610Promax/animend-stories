@@ -1068,6 +1068,198 @@ li { list-style: none; }
     transform: scale(1.05);
 }
 /* ====================================================
+   TRANG CHI TIẾT ĐỘNG VẬT (ELEPHANT.HTML)
+==================================================== */
+/* --- SECTION 1: HERO --- */
+.animal-hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: flex-end; /* Đẩy nội dung xuống góc dưới */
+    padding: 80px 50px;
+}
+
+.animal-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Gradient tối dần về phía dưới để đọc chữ rõ hơn */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(5,8,10,0.9) 100%);
+    z-index: 1;
+}
+
+.animal-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.partner-tag {
+    display: inline-block;
+    background: rgba(242, 139, 76, 0.2);
+    color: var(--accent-orange);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--accent-orange);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.animal-hero-content h1 {
+    font-size: 5.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.status-tag {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,0,0,0.3);
+}
+
+.status-dot {
+    width: 12px; height: 12px;
+    background: #ff3333;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px #ff3333;
+}
+
+.status-tag strong { color: #ff3333; margin-left: 8px; text-transform: uppercase; }
+
+/* --- SECTION 2: BĂNG CHUYỀN THƯ VIỆN MEDIA --- */
+.media-gallery {
+    padding: 50px 50px 100px;
+    background-color: #05080a;
+}
+
+.media-card {
+    min-width: 350px;
+    height: 220px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    scroll-snap-align: start;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.media-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.media-card:hover { border-color: #00e5ff; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,229,255,0.2); }
+.media-card:hover img { transform: scale(1.05); }
+
+.play-icon-overlay, .zoom-icon-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    color: #000; font-size: 1.5rem;
+    opacity: 0.8; transition: all 0.3s ease;
+}
+
+.media-card:hover .play-icon-overlay { background: #ff0000; color: white; opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+.media-card:hover .zoom-icon-overlay { background: #00e5ff; color: #000; opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+
+/* --- MODAL (HỘP THOẠI NỔI XEM VIDEO/ẢNH) --- */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    z-index: 1000; left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    backdrop-filter: blur(10px);
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+    width: 80%;
+    max-width: 1100px;
+    aspect-ratio: 16/9; /* Giữ tỷ lệ chuẩn video */
+    background: #000;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* Đảm bảo iframe và ảnh vừa vặn hộp thoại */
+.modal-content iframe, .modal-content img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 40px;
+    color: #fff; font-size: 3rem;
+    font-weight: bold; cursor: pointer;
+    transition: color 0.3s;
+}
+.close-modal:hover { color: #00e5ff; }
+
+/* --- SECTION 3: BẢN ĐỒ & TÌNH TRẠNG --- */
+.habitat-status {
+    padding: 80px 50px 120px;
+    background-color: #0d131a;
+}
+
+.habitat-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.map-box {
+    flex: 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #e5d1a8; /* Màu nền cát giống bản đồ mẫu */
+}
+
+.map-box img { width: 100%; display: block; }
+
+.map-pin {
+    position: absolute;
+    bottom: 30px; right: 30px;
+    background: white; color: black;
+    padding: 10px 20px; border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.map-pin span { display: block; font-size: 0.85rem; color: #666; }
+.map-pin strong { font-size: 1.2rem; }
+
+.status-info { flex: 1; }
+
+.status-info p {
+    font-size: 1.15rem; color: #aeb5be;
+    line-height: 1.8; margin-bottom: 25px;
+}
+.status-info strong { color: #fff; }
+/* ====================================================
    TỐI ƯU HÓA CHO ĐIỆN THOẠI DI ĐỘNG (RESPONSIVE)
 ==================================================== */
 @media (max-width: 768px) {

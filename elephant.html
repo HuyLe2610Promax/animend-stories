@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voi Châu Phi | AniMend Stories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="animal-detail-page">
+
+    <!-- THANH ĐIỀU HƯỚNG (Dùng chung) -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+            <span class="brand-name">AniMend Stories</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: #00e5ff;">Bảo vệ động vật hoang dã</a></li>
+                <li><a href="news.html">Tin tức</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: HERO CỦA CON VẬT (Video nền + Tiêu đề) -->
+    <section class="animal-hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <!-- Thay bằng video con voi thực tế của bạn -->
+            <source src="./assets/elephant-bg.mp4" type="video/mp4">
+        </video>
+        <div class="animal-hero-overlay"></div>
+        
+        <div class="animal-hero-content fade-up">
+            <div class="partner-tag">
+                <i class="fa-solid fa-paw"></i> Đối tác bảo tồn: Save the Elephants
+            </div>
+            <h1>VOI CHÂU PHI</h1>
+            <div class="status-tag">
+                <span class="status-dot"></span> Sách Đỏ: <strong>Cực kỳ nguy cấp</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BĂNG CHUYỀN THƯ VIỆN MEDIA (Video & Ảnh) -->
+    <section class="media-gallery fade-up">
+        <div class="carousel-wrapper">
+            <button class="carousel-control left" id="media-left">‹</button>
+            
+            <div class="carousel-container" id="media-carousel">
+                
+                <!-- Item 1: VIDEO YOUTUBE -->
+                <!-- Thuộc tính data-type="video" và data-src chứa link nhúng youtube -->
+                <div class="media-card" data-type="video" data-src="https://youtu.be/AA0UZVXJd2o">
+                    <img src="./assets/elephant.jpg" alt="Câu chuyện của voi Luna">
+                    <div class="play-icon-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+
+                <!-- Item 2: ẢNH PHÓNG TO -->
+                <!-- Thuộc tính data-type="image" và data-src chứa link ảnh gốc -->
+                <div class="media-card" data-type="image" data-src="./assets/elephant-large-1.jpg">
+                    <img src="./assets/elephant-large-1.jpg" alt="Voi Châu Phi trong tự nhiên">
+                    <div class="zoom-icon-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+                <!-- Item 3: VIDEO YOUTUBE -->
+                <div class="media-card" data-type="video" data-src="https://www.youtube.com/embed/ScMzIvxBSi4">
+                    <img src="./assets/elephant-2.jpg" alt="Hành trình giải cứu">
+                    <div class="play-icon-overlay"><i class="fa-solid fa-play"></i></div>
+                </div>
+                
+                <!-- Item 4: ẢNH PHÓNG TO -->
+                <div class="media-card" data-type="image" data-src="./assets/elephant-large-2.jpg">
+                    <img src="./assets/elephant-large-2.jpg" alt="Đàn voi trên thảo nguyên">
+                    <div class="zoom-icon-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+            </div>
+            
+            <button class="carousel-control right" id="media-right">›</button>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BẢN ĐỒ & TÌNH TRẠNG LOÀI -->
+    <section class="habitat-status fade-up">
+        <div class="habitat-container">
+            
+            <!-- Cột trái: Bản đồ -->
+            <div class="map-box">
+                <img src="./assets/africa-map.jpg" alt="Bản đồ phân bố Voi Châu Phi">
+                <div class="map-pin">
+                    <span>Châu Phi</span>
+                    <strong>Kenya</strong>
+                </div>
+            </div>
+
+            <!-- Cột phải: Nội dung -->
+            <div class="status-info">
+                <p>Voi là loài động vật thông minh, nhạy cảm và có tính xã hội cao. Khi di chuyển, chúng định hình vùng đất bằng cách gieo hạt, tạo lối đi và kiến tạo môi trường sống duy trì vô số loài khác.</p>
+                
+                <p>Tuy nhiên, bầy đàn của chúng đang bị bao vây. Cuộc khủng hoảng săn trộm tàn khốc, bị thúc đẩy bởi nạn buôn bán ngà voi, đã chia cắt nhiều gia đình. Chỉ tính riêng từ năm 2010 đến 2012, ước tính có khoảng <strong>100.000 con voi ở Châu Phi</strong> đã bị giết để lấy ngà.</p>
+                
+                <p>Bằng cách ủng hộ <strong>Save the Elephants (STE)</strong>, bạn giúp bảo vệ những loài động vật phi thường này, bảo vệ vẻ đẹp và tính toàn vẹn sinh thái trong môi trường sống của chúng.</p>
+                
+                <a href="#" class="btn-glow">Quyên Góp Ngay ➔</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL LIGHTBOX (Khung nổi để xem Video/Ảnh) -->
+    <div id="mediaModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content" id="modalBody">
+            <!-- JS sẽ bơm iframe Youtube hoặc thẻ img vào đây -->
+        </div>
+    </div>
+
+    <!-- FOOTER (Dùng chung) -->
+    <footer class="footer-cinematic">
+        <div class="footer-noise"></div> 
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+                    <span class="brand-name">AniMend Stories</span>
+                </a>
+                <p>Kết nối những trái tim yêu thiên nhiên, lan tỏa những thước phim giải cứu chân thực và kịch tính nhất.</p>
+            </div>
+            <!-- ... Giữ nguyên các phần khác của Footer ... -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

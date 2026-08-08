@@ -74,3 +74,60 @@ if (timeFilterDropdown) {
         }
     });
 }
+// --- LOGIC CHO TRANG CHI TIẾT ĐỘNG VẬT (Băng chuyền & Modal Media) ---
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Logic cho băng chuyền Media (hoạt động giống trang chủ)
+    const mediaCarousel = document.getElementById('media-carousel');
+    const btnMediaLeft = document.getElementById('media-left');
+    const btnMediaRight = document.getElementById('media-right');
+
+    if (mediaCarousel && btnMediaLeft && btnMediaRight) {
+        const mediaScrollAmount = 370; // Chiều rộng thẻ + gap
+        btnMediaRight.addEventListener('click', () => mediaCarousel.scrollBy({ left: mediaScrollAmount, behavior: 'smooth' }));
+        btnMediaLeft.addEventListener('click', () => mediaCarousel.scrollBy({ left: -mediaScrollAmount, behavior: 'smooth' }));
+    }
+
+    // 2. Logic cho Modal xem Video/Ảnh
+    const mediaCards = document.querySelectorAll('.media-card');
+    const modal = document.getElementById('mediaModal');
+    const modalBody = document.getElementById('modalBody');
+    const closeModal = document.querySelector('.close-modal');
+
+    if (modal) {
+        mediaCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const type = card.getAttribute('data-type');
+                const src = card.getAttribute('data-src');
+                
+                // Hiển thị Modal
+                modal.classList.add('active');
+
+                // Nạp nội dung tương ứng vào Modal
+                if (type === 'video') {
+                    // Thêm tham số ?autoplay=1 để tự động phát video khi mở modal
+                    modalBody.innerHTML = `<iframe src="${src}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+                } else if (type === 'image') {
+                    modalBody.innerHTML = `<img src="${src}" alt="Zoomed Image">`;
+                }
+            });
+        });
+
+        // Hàm đóng Modal
+        const closeMediaModal = () => {
+            modal.classList.remove('active');
+            // CỰC KỲ QUAN TRỌNG: Làm rỗng modalBody để tắt tiếng video YouTube khi đóng
+            setTimeout(() => { modalBody.innerHTML = ''; }, 300); 
+        };
+
+        // Đóng khi bấm nút X
+        closeModal.addEventListener('click', closeMediaModal);
+
+        // Đóng khi click ra vùng đen bên ngoài nội dung
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeMediaModal();
+            }
+        });
+    }
+});
