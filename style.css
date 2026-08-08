@@ -495,11 +495,29 @@ li { list-style: none; }
 /* ====================================================
    SECTION: YOUTUBE PROMO (RẠP CHIẾU PHIM DỌC)
 ==================================================== */
+/* ====================================================
+   SECTION: YOUTUBE PROMO (BACKGROUND & HIỆU ỨNG GIAO THOA)
+==================================================== */
 .youtube-promo {
     padding: 120px 50px;
-    background-color: var(--bg-dark); 
+    /* Màu nền xám than đậm (Dark Slate) */
+    background-color: #0d131a; 
     position: relative;
     border-top: 1px solid rgba(255,255,255,0.02);
+    overflow: hidden; /* Cần thiết để các phần tử trượt vào không làm tràn thanh cuộn ngang */
+}
+
+/* Tạo lớp họa tiết đường đồng mức (Topographic) bằng CSS mờ 3% */
+.youtube-promo::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Sử dụng các vòng tròn đồng tâm giao nhau để tạo ảo giác đường vân địa hình */
+    background-image: 
+        repeating-radial-gradient(circle at 15% 30%, transparent 0, transparent 30px, rgba(255, 255, 255, 0.03) 30px, rgba(255, 255, 255, 0.03) 31px),
+        repeating-radial-gradient(circle at 85% 70%, transparent 0, transparent 40px, rgba(255, 255, 255, 0.02) 40px, rgba(255, 255, 255, 0.02) 41px);
+    pointer-events: none; /* Không cản trở click chuột vào video */
+    z-index: 0;
 }
 
 .yt-promo-container {
@@ -509,7 +527,38 @@ li { list-style: none; }
     gap: 80px;
     max-width: 1100px;
     margin: 0 auto;
-    flex-wrap: wrap; /* Tự động xuống dòng khi xem trên màn hình nhỏ */
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1; /* Đảm bảo nội dung nổi lên trên lớp họa tiết */
+}
+
+/* --- HIỆU ỨNG CUỘN TRANG (GIAO THOA 2 CHIỀU) --- */
+
+/* Ghi đè hiệu ứng nổi lên (fade-up) mặc định của section cha để nó làm khung chứa tĩnh */
+.youtube-promo.fade-up {
+    transform: none;
+    opacity: 1;
+}
+
+/* Trạng thái 1: Khung điện thoại ẩn và bị đẩy sang trái */
+.youtube-promo .phone-frame-wrapper {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Trạng thái 1: Cụm chữ ẩn và bị đẩy sang phải (Có độ trễ 0.2s để xuất hiện nhịp nhàng) */
+.youtube-promo .yt-promo-content {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out 0.2s, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s; 
+}
+
+/* Trạng thái 2: Khi cuộn chuột tới, JS tự động thêm class .visible, hai bên cùng trượt vào giữa */
+.youtube-promo.visible .phone-frame-wrapper,
+.youtube-promo.visible .yt-promo-content {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* --- KHUNG ĐIỆN THOẠI PHÁT SÁNG --- */
@@ -926,4 +975,95 @@ li { list-style: none; }
     background: #00e5ff; color: #000;
     border-color: transparent;
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+/* ====================================================
+   SECTION: CỘNG ĐỒNG (GLASSMORPHISM & PARALLAX)
+==================================================== */
+.community-section {
+    position: relative;
+    padding: 160px 20px;
+    /* Bạn hãy thêm một bức ảnh vào thư mục assets và đổi tên thành community-bg.jpg */
+    background-image: url('./assets/community-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Tạo hiệu ứng Parallax: Ảnh nền đứng im khi cuộn chuột */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Lớp phủ gradient làm tối hai đầu section để hòa quyện vào các phần trên/dưới */
+.community-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, #0d131a 0%, rgba(13, 19, 26, 0.4) 50%, #070a0d 100%);
+    z-index: 1;
+}
+
+/* --- THẺ KÍNH MỜ TRUNG TÂM --- */
+.glass-card {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    width: 100%;
+    /* Màu nền bán trong suốt */
+    background: rgba(10, 15, 22, 0.45); 
+    /* Hiệu ứng làm mờ nền phía sau (Kính mờ) */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); /* Hỗ trợ trình duyệt Safari */
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 24px;
+    padding: 70px 50px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,255,255,0.02);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.5s ease;
+}
+
+/* Hiệu ứng nhấc bổng thẻ kính lên khi rê chuột vào */
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 229, 255, 0.5);
+}
+
+.glass-card h2 {
+    font-size: 3.8rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.6);
+}
+
+.glass-card p {
+    font-size: 1.25rem;
+    color: #e6f1ff;
+    line-height: 1.7;
+    margin-bottom: 45px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- NÚT BẤM KÊU GỌI HÀNH ĐỘNG --- */
+.btn-glow {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: #00e5ff;
+    color: #070a0d;
+    font-weight: bold;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    /* Hiệu ứng tỏa sáng mặc định */
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.btn-glow:hover {
+    background-color: #fff;
+    /* Tỏa sáng mạnh hơn khi hover */
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.8);
+    transform: scale(1.05);
 }
