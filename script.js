@@ -46,3 +46,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+// --- LOGIC CHO DROPDOWN LỌC THỜI GIAN (TRANG NEWS) ---
+const timeFilterDropdown = document.getElementById('timeFilter');
+if (timeFilterDropdown) {
+    const selected = timeFilterDropdown.querySelector('.dropdown-selected');
+    const optionsList = timeFilterDropdown.querySelector('.dropdown-options');
+    const options = timeFilterDropdown.querySelectorAll('.dropdown-options li');
+    const spanText = selected.querySelector('span');
+
+    // Bật/tắt menu khi click vào
+    selected.addEventListener('click', () => {
+        optionsList.classList.toggle('active');
+    });
+
+    // Thay đổi text khi chọn một mốc thời gian
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            spanText.innerHTML = option.innerHTML; // Cập nhật text
+            optionsList.classList.remove('active'); // Đóng menu
+        });
+    });
+
+    // Tự động đóng menu nếu click ra ngoài vùng dropdown
+    document.addEventListener('click', (e) => {
+        if (!timeFilterDropdown.contains(e.target)) {
+            optionsList.classList.remove('active');
+        }
+    });
+}

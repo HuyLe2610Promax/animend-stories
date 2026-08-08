@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức | AniMend Stories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="news-page">
+
+    <!-- THANH ĐIỀU HƯỚNG (Tương tự trang chủ) -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+            <span class="brand-name">AniMend Stories</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Bảo vệ động vật hoang dã</a></li>
+                <!-- Highlight mục Tin tức để biết đang ở trang này -->
+                <li><a href="news.html" style="color: #00e5ff;">Tin tức</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: TIN NỔI BẬT (Bố cục Bất đối xứng - 3D Layer) -->
+    <section class="featured-news fade-up">
+        <!-- Ảnh tràn lề 2/3 màn hình bên phải -->
+        <div class="featured-image-wrapper">
+            <img src="./assets/elephant.jpg" alt="Tin nổi bật">
+            <div class="featured-gradient"></div>
+        </div>
+        
+        <!-- Khối nội dung nổi lên đè vào ảnh -->
+        <div class="featured-content">
+            <span class="news-badge">Tin Tiêu Điểm</span>
+            <h2>CHUYẾN GIẢI CỨU LỊCH SỬ: ĐƯA VOI CHÂU PHI TRỞ VỀ TỰ NHIÊN</h2>
+            <p>Hàng chục chuyên gia và tình nguyện viên đã làm việc không ngừng nghỉ suốt 48 giờ để giải cứu đàn voi mắc kẹt. Một hành trình đầy cảm xúc và nước mắt đã khép lại với cái kết viên mãn.</p>
+            <a href="#" class="read-more-btn">Đọc Toàn Bộ Câu Chuyện ➔</a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BẢN TIN MỚI NHẤT (Lưới 2x2 & Thanh Công Cụ) -->
+    <section class="latest-news fade-up">
+        
+        <!-- Thanh Công Cụ (Filter & Search) -->
+        <div class="news-toolbar">
+            <!-- Dropdown Lọc thời gian -->
+            <div class="custom-dropdown" id="timeFilter">
+                <div class="dropdown-selected">Lọc thời gian: <span>Mới nhất</span> <i class="fa-solid fa-chevron-down"></i></div>
+                <ul class="dropdown-options">
+                    <li>Mới nhất</li>
+                    <li>1 giờ trước</li>
+                    <li>12 giờ trước</li>
+                    <li>30 ngày qua</li>
+                    <li>3 tháng trước</li>
+                    <li>9 tháng trước</li>
+                    <li>1 năm trước</li>
+                    <li>Hiện tất cả các bài đăng</li>
+                </ul>
+            </div>
+
+            <!-- Thanh tìm kiếm -->
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm bài viết...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+
+        <!-- Lưới 4 Bài Đăng (Grid 2x2) -->
+        <div class="news-grid">
+            <!-- Bài 1 -->
+            <article class="news-card">
+                <div class="news-thumbnail">
+                    <img src="./assets/manatee.jpg" alt="Lợn biển">
+                    <div class="time-tag">2 giờ trước</div>
+                </div>
+                <div class="news-info">
+                    <span class="category">Sinh vật biển</span>
+                    <h3>Phát hiện quần thể lợn biển mới tại Amazonia</h3>
+                    <p>Một tín hiệu đáng mừng cho hệ sinh thái dưới nước khi các nhà bảo tồn vừa ghi nhận...</p>
+                </div>
+            </article>
+
+            <!-- Bài 2 -->
+            <article class="news-card">
+                <div class="news-thumbnail">
+                    <img src="./assets/cat.jpg" alt="Mèo Andes">
+                    <div class="time-tag">6 giờ trước</div>
+                </div>
+                <div class="news-info">
+                    <span class="category">Động vật có vú</span>
+                    <h3>Ánh sáng trong đêm: Thiết bị cứu sống Mèo Andes</h3>
+                    <p>Ứng dụng công nghệ hồng ngoại mới nhất đang giúp các kiểm lâm viên theo dõi và bảo vệ loài mèo quý hiếm này...</p>
+                </div>
+            </article>
+
+            <!-- Bài 3 -->
+            <article class="news-card">
+                <div class="news-thumbnail">
+                    <img src="./assets/iguana.jpg" alt="Cộng đồng">
+                    <div class="time-tag">1 ngày trước</div>
+                </div>
+                <div class="news-info">
+                    <span class="category">Dự án cộng đồng</span>
+                    <h3>20 Năm Đồng Hành & Phát Triển Lãnh Đạo Địa Phương</h3>
+                    <p>Trao quyền cho người dân bản địa chính là chìa khóa vững chắc nhất để bảo vệ môi trường hoang dã bền vững.</p>
+                </div>
+            </article>
+
+            <!-- Bài 4 -->
+            <article class="news-card">
+                <div class="news-thumbnail">
+                    <img src="./assets/yt-shorts.jpg" alt="Thử thách">
+                    <div class="time-tag">3 ngày trước</div>
+                </div>
+                <div class="news-info">
+                    <span class="category">Góc Nhìn</span>
+                    <h3>Giải quyết xung đột giữa con người và động vật hoang dã</h3>
+                    <p>Những giải pháp sáng tạo đang được triển khai để đảm bảo không gian sống an toàn cho cả đôi bên.</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Phân trang (Pagination) -->
+        <div class="pagination">
+            <a href="#" class="page-num active">1</a>
+            <a href="#" class="page-num">2</a>
+            <a href="#" class="page-num">3</a>
+            <span class="dots">...</span>
+            <a href="#" class="page-num">115</a>
+            <a href="#" class="page-next"><i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER (Sử dụng lại Footer ở trang chủ) -->
+    <footer class="footer-cinematic">
+        <div class="footer-noise"></div> 
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+                    <span class="brand-name">AniMend Stories</span>
+                </a>
+                <p>Kết nối những trái tim yêu thiên nhiên, lan tỏa những thước phim giải cứu chân thực và kịch tính nhất.</p>
+            </div>
+            <div class="footer-col footer-newsletter">
+                <h3>Đừng bỏ lỡ những câu chuyện kịch tính nhất</h3>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">Đăng Ký</button>
+                </form>
+            </div>
+            <div class="footer-col footer-social">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AniMend Stories. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
