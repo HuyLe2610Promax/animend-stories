@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniMend Stories | Bảo Vệ Động Vật Hoang Dã</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- THANH ĐIỀU HƯỚNG -->
+    <header class="navbar fade-up">
+        <a href="index.html" class="logo">
+            <!-- Thay đường dẫn logo của bạn vào đây -->
+            <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+            <span class="brand-name">AniMend Stories</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li class="has-dropdown">
+                    <a href="#">Bảo vệ động vật hoang dã</a>
+                    
+                    <!-- MEGA MENU -->
+                    <div class="mega-menu">
+                        <div class="mega-image-container">
+                            <!-- Hình ảnh đại diện trong mega menu -->
+                            <img src="./assets/mega-menu-img.jpg" alt="Khám phá các loài">
+                            <div class="mega-image-overlay">
+                                <h3>Khám phá tất cả các loài</h3>
+                                <p>Bảo vệ các loài và môi trường sống trên toàn thế giới thông qua các chương trình bảo tồn.</p>
+                            </div>
+                        </div>
+                        <div class="mega-list">
+                            <ul class="mega-column">
+                                <li><a href="#">Tất cả các loài</a></li>
+                                <li><a href="#">Chim</a></li>
+                                <li><a href="#">Các loài chó</a></li>
+                                <li><a href="#">Các loài mèo</a></li>
+                            </ul>
+                            <ul class="mega-column">
+                                <li><a href="#">Động vật có vú</a></li>
+                                <li><a href="#">Động vật thủy sinh</a></li>
+                                <li><a href="#">Linh trưởng</a></li>
+                                <li><a href="#">Động vật móng guốc</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">Tin tức</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: HERO BACKGROUND VIDEO -->
+    <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="./assets/background-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-up">
+            <h1>CÙNG NHAU BẢO VỆ<br>ĐỘNG VẬT HOANG DÃ</h1>
+            <p>AniMend Stories kết nối những người bảo tồn và những người ủng hộ để thúc đẩy các giải pháp giúp động vật hoang dã và con người cùng tồn tại và phát triển.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: BĂNG CHUYỀN (CAROUSEL) -->
+    <section class="species-section fade-up">
+        <div class="section-header">
+            <h2>Các Loài Chúng Tôi Bảo Vệ</h2>
+            <p>Gặp gỡ những loài động vật hoang dã mà chúng tôi đang bảo vệ trên toàn thế giới.</p>
+            <button class="explore-btn">Khám Phá Tất Cả Động Vật ➔</button>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="carousel-control left" id="slide-left">‹</button>
+            
+            <div class="carousel-container" id="carousel">
+                
+                <!-- THẺ BÀI ĐĂNG 1 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./assets/elephant.jpg" alt="Voi Châu Phi">
+                    </div>
+                    <!-- Badge thu gọn, mở rộng khi hover -->
+                    <div class="card-badge">
+                        <span class="badge-icon">🐾</span>
+                        <span class="badge-text">Đối tác bảo tồn</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Voi Châu Phi</h3>
+                        <!-- Phần chi tiết sẽ hiện lên khi hover -->
+                        <div class="card-hover-details">
+                            <p>Tổ chức Cứu loài Voi (STE)</p>
+                            <button class="donate-btn">Quyên góp</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THẺ BÀI ĐĂNG 2 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./assets/manatee.jpg" alt="Lợn biển Châu Phi">
+                    </div>
+                    <div class="card-badge">
+                        <span class="badge-icon">🐾</span>
+                        <span class="badge-text">Đối tác bảo tồn</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Lợn biển Châu Phi</h3>
+                        <div class="card-hover-details">
+                            <p>Bảo tồn sinh vật biển</p>
+                            <button class="donate-btn">Quyên góp</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- THẺ BÀI ĐĂNG 3 -->
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./assets/iguana.jpg" alt="Chương trình Amazonia">
+                    </div>
+                    <div class="card-badge">
+                        <span class="badge-icon">👥</span>
+                        <span class="badge-text">Dự án cộng đồng</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Chương trình Amazonia</h3>
+                        <div class="card-hover-details">
+                            <p>Bảo vệ rừng nhiệt đới</p>
+                            <button class="donate-btn">Quyên góp</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- THẺ BÀI ĐĂNG 4 -->
+                 <div class="card">
+                    <div class="card-img-wrapper">
+                        <img src="./assets/cat.jpg" alt="Mèo Andes">
+                    </div>
+                    <div class="card-badge">
+                        <span class="badge-icon">🐾</span>
+                        <span class="badge-text">Đối tác bảo tồn</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Mèo Andes</h3>
+                        <div class="card-hover-details">
+                            <p>Liên minh Mèo Andes</p>
+                            <button class="donate-btn">Quyên góp</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="carousel-control right" id="slide-right">›</button>
+        </div>
+    </section>
+    <!-- SECTION 3: YOUTUBE PROMO (RẠP CHIẾU PHIM DỌC) -->
+    <section class="youtube-promo fade-up">
+        <div class="yt-promo-container">
+            
+            <!-- Khung mô phỏng điện thoại (Hiệu ứng phát sáng) -->
+            <div class="phone-frame-wrapper">
+                <a href="https://www.youtube.com/shorts/PSiOuAHZVQY?feature=share" target="_blank" class="phone-frame">
+            <!-- Lưu ý: Bạn cần thêm 1 ảnh dọc (tỷ lệ 9:16) vào thư mục assets và đặt tên là yt-shorts.jpg -->
+            <img src="./assets/yt-shorts.jpg" alt="Video Giải Trí Động Vật">
+            
+            <!-- Icon Play mờ ảo ở giữa màn hình -->
+            <div class="play-overlay">
+                <i class="fa-solid fa-play"></i>
+            </div>
+        </a>
+            </div>
+
+            <!-- Nội dung văn bản giới thiệu -->
+            <div class="yt-promo-content">
+                <h2>THẾ GIỚI ĐỘNG VẬT<br><span class="highlight-blue">TRONG 60 GIÂY</span></h2>
+                <p>Khám phá những thước phim giải trí cực điện ảnh và đầy thú vị mà bạn không thể bỏ qua. Thư giãn và đồng hành cùng chúng tôi mỗi ngày.</p>
+                
+                <!-- Nút bấm liên kết thẳng tới YouTube -->
+                <a href="https://www.youtube.com/@AniMendStories" target="_blank" class="yt-btn">
+                    <i class="fa-brands fa-youtube yt-icon"></i> Xem trên YouTube
+                </a>
+            </div>
+
+        </div>
+    </section>
+<!-- SECTION FOOTER: CINEMATIC & HIGH-CONTRAST -->
+    <footer class="footer-cinematic fade-up">
+        <!-- Lớp phủ tạo hiệu ứng nhiễu hạt (Film Grain) -->
+        <div class="footer-noise"></div> 
+        
+        <div class="footer-container">
+            <!-- Cột 1: Logo & Giới thiệu -->
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+                    <span class="brand-name">AniMend Stories</span>
+                </a>
+                <p>Kết nối những trái tim yêu thiên nhiên, lan tỏa những thước phim giải cứu chân thực và kịch tính nhất.</p>
+            </div>
+
+            <!-- Cột 2: Đăng ký nhận tin (Newsletter) -->
+            <div class="footer-col footer-newsletter">
+                <h3>Đừng bỏ lỡ những câu chuyện kịch tính nhất</h3>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">Đăng Ký</button>
+                </form>
+            </div>
+
+            <!-- Cột 3: Mạng xã hội -->
+            <div class="footer-col footer-social">
+                <h3>Kết nối với chúng tôi</h3>
+                <div class="social-icons">
+                    <!-- Bạn có thể thay dấu # bằng link YouTube của bạn -->
+                    <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        
+        <!-- Thanh bản quyền dưới cùng -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 AniMend Stories. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Chính sách bảo mật</a>
+                <a href="#">Điều khoản sử dụng</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
