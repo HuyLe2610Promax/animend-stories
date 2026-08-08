@@ -1067,3 +1067,62 @@ li { list-style: none; }
     box-shadow: 0 0 40px rgba(0, 229, 255, 0.8);
     transform: scale(1.05);
 }
+/* ====================================================
+   TỐI ƯU HÓA CHO ĐIỆN THOẠI DI ĐỘNG (RESPONSIVE)
+==================================================== */
+@media (max-width: 768px) {
+    /* --- CHUNG --- */
+    body { font-size: 14px; }
+    
+    /* --- THANH ĐIỀU HƯỚNG --- */
+    .navbar { padding: 15px 20px; }
+    /* Tạm thời ẩn các menu chữ trên màn hình nhỏ để tránh bị tràn */
+    .nav-links { display: none; }
+    
+    /* --- TRANG CHỦ: HERO SECTION --- */
+    .hero-content h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    .hero-content p { font-size: 1rem; padding: 0 15px; }
+    
+    /* --- TRANG CHỦ: CAROUSEL ĐỘNG VẬT --- */
+    .species-section { padding: 50px 20px; }
+    .section-header h2 { font-size: 2rem; }
+    
+    /* --- TRANG CHỦ: YOUTUBE PROMO --- */
+    .youtube-promo { padding: 60px 20px; }
+    .yt-promo-content h2 { font-size: 2.2rem; }
+    .phone-frame { width: 260px; height: 462px; } /* Thu nhỏ khung điện thoại một chút */
+    
+    /* --- TRANG CHỦ: CỘNG ĐỒNG --- */
+    .community-section { padding: 80px 20px; }
+    .glass-card { padding: 40px 25px; border-radius: 16px; }
+    .glass-card h2 { font-size: 2.2rem; }
+    .glass-card p { font-size: 1rem; margin-bottom: 30px; }
+    .btn-glow { padding: 15px 30px; font-size: 1rem; }
+    
+    /* --- TRANG TIN TỨC --- */
+    .featured-news { flex-direction: column; min-height: auto; padding-top: 100px; height: auto; }
+    .featured-image-wrapper { position: relative; width: 100%; height: 350px; }
+    .featured-gradient {
+        background: linear-gradient(to top, #05080a 0%, transparent 40%);
+    }
+    .featured-content { 
+        width: 90%; margin: -80px auto 0; 
+        border-left: none; border-top: 4px solid #00e5ff; 
+        border-radius: 15px; padding: 30px 20px; 
+    }
+    .featured-content h2 { font-size: 1.8rem; }
+    
+    /* Biến lưới tin tức thành 1 cột */
+    .news-toolbar { flex-direction: column; align-items: stretch; gap: 15px; }
+    .search-box { width: 100%; }
+    .custom-dropdown { width: 100%; }
+    .news-grid { grid-template-columns: 1fr; gap: 30px; }
+    
+    /* --- FOOTER --- */
+    .footer-cinematic { padding: 60px 20px 20px; }
+    .footer-container { flex-direction: column; gap: 40px; text-align: center; }
+    .footer-brand .logo { justify-content: center; margin-right: 0; }
+    .subscribe-form { flex-direction: column; }
+    .social-icons { justify-content: center; }
+    .footer-bottom { justify-content: center; text-align: center; }
+}
