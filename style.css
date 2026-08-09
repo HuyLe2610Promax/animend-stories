@@ -723,6 +723,7 @@ li { list-style: none; }
                 linear-gradient(to top, #05080a 0%, transparent 20%);
 }
 
+/* Khối nội dung nổi lên đè vào ảnh */
 .featured-content {
     position: relative;
     z-index: 2;
@@ -736,6 +737,16 @@ li { list-style: none; }
     box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
     border-radius: 0 20px 20px 0;
     transform: translateY(20px); /* Kéo khối này xuống một chút tạo độ lệch 3D */
+    /* Thêm transition để tạo độ mượt khi hover */
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+/* Hiệu ứng nổi lên và phát sáng khi rê chuột (Đồng bộ với YouTube Promo) */
+.featured-content:hover {
+    transform: translateY(5px); /* Nổi khối nội dung lên cao hơn */
+    border-left-color: rgba(0, 229, 255, 0.8);
+    /* Tỏa hào quang xanh điện mờ ảo */
+    box-shadow: 0 20px 50px rgba(0, 229, 255, 0.35), 20px 20px 50px rgba(0,0,0,0.8);
 }
 
 .news-badge {
@@ -1317,4 +1328,58 @@ li { list-style: none; }
     .subscribe-form { flex-direction: column; }
     .social-icons { justify-content: center; }
     .footer-bottom { justify-content: center; text-align: center; }
+}
+/* ====================================================
+   TRANG CHI TIẾT BÀI VIẾT (NEWS-DETAIL.HTML)
+==================================================== */
+.article-container {
+    max-width: 850px;
+    margin: 150px auto 100px;
+    padding: 0 40px;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 40px;
+}
+
+.article-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 20px 0;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.article-meta {
+    color: #8892b0;
+    font-size: 1.05rem;
+}
+
+.article-body p {
+    font-size: 1.15rem;
+    color: #caced5;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.article-image {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.article-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.article-image .image-caption {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: #8892b0;
+    font-style: italic;
 }
