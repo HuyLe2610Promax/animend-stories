@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lợn Biển Châu Phi | AniMend Stories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="animal-detail-page">
+
+    <!-- THANH ĐIỀU HƯỚNG (Dùng chung) -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+            <span class="brand-name">AniMend Stories</span>
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: #00e5ff;">Bảo vệ động vật hoang dã</a></li>
+                <li><a href="news.html">Bài đăng</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: HERO CỦA CON VẬT (Video nền + Tiêu đề) -->
+    <section class="animal-hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <!-- File video lợn biển -->
+            <source src="./assets/manatee-bg.mp4" type="video/mp4">
+        </video>
+        <div class="animal-hero-overlay"></div>
+        
+        <div class="animal-hero-content fade-up">
+            <div class="partner-tag">
+                <i class="fa-solid fa-water"></i> Đối tác bảo tồn: Mạng lưới Cứu hộ Sinh vật biển
+            </div>
+            <h1>LỢN BIỂN CHÂU PHI</h1>
+            <div class="status-tag">
+                <!-- Màu vàng cam báo hiệu Sắp nguy cấp -->
+                <span class="status-dot" style="background: #ffaa00; box-shadow: 0 0 10px #ffaa00;"></span> 
+                Sách Đỏ: <strong style="color: #ffaa00;">Sắp nguy cấp (Vulnerable)</strong>
+            </div>
+        </div>
+    </section>
+
+   <!-- SECTION 2: BĂNG CHUYỀN THƯ VIỆN MEDIA (Chỉ Hình Ảnh Phóng To) -->
+    <section class="media-gallery fade-up">
+        <div class="carousel-wrapper">
+            <button class="carousel-control left" id="media-left">‹</button>
+            
+            <div class="carousel-container" id="media-carousel">
+                
+                <!-- Item 1: ẢNH PHÓNG TO -->
+                <div class="media-card" data-type="image" data-src="./assets/manatee-large-1.jpg">
+                    <img src="./assets/manatee-large-1.jpg" alt="Lợn biển bơi dưới nước">
+                    <div class="zoom-icon-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+                <!-- Item 2: ẢNH PHÓNG TO -->
+                <div class="media-card" data-type="image" data-src="./assets/manatee-large-2.jpg">
+                    <img src="./assets/manatee-large-2.jpg" alt="Lợn biển ăn cỏ biển">
+                    <div class="zoom-icon-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+                <!-- Item 3: ẢNH PHÓNG TO -->
+                <div class="media-card" data-type="image" data-src="./assets/manatee-large-3.jpg">
+                    <img src="./assets/manatee-large-3.jpg" alt="Lợn biển mẹ và con">
+                    <div class="zoom-icon-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                
+                <!-- Item 4: ẢNH PHÓNG TO -->
+                <div class="media-card" data-type="image" data-src="./assets/manatee-large-4.jpg">
+                    <img src="./assets/manatee-large-4.jpg" alt="Công tác cứu hộ lợn biển">
+                    <div class="zoom-icon-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+
+            </div>
+            
+            <button class="carousel-control right" id="media-right">›</button>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BẢN ĐỒ & TÌNH TRẠNG LOÀI -->
+    <section class="habitat-status fade-up">
+        <div class="habitat-container">
+            
+            <!-- Cột trái: Bản đồ (Dùng nền màu xanh nước biển nhạt cho hợp với sinh vật biển) -->
+            <div class="map-box" style="background: #a8dbe5;">
+                <img src="./assets/manatee-map.jpg" alt="Bản đồ phân bố Lợn biển Châu Phi">
+                <div class="map-pin">
+                    <span>Vùng ven biển & Sông ngòi</span>
+                    <strong>Tây Phi</strong>
+                </div>
+            </div>
+
+            <!-- Cột phải: Nội dung -->
+            <div class="status-info">
+                <p>Lợn biển Châu Phi (African Manatee) là một trong những loài sinh vật biển hiền lành nhất thế giới, thường được gọi là "bò biển". Chúng dành phần lớn thời gian trong ngày để ăn các loài thực vật thủy sinh ở vùng nước nông, ven bờ và các cửa sông khu vực Tây Phi.</p>
+                
+                <p>Thật không may, cuộc sống yên bình của chúng đang bị đe dọa nghiêm trọng. Môi trường sống bị phá hủy do xây dựng đập thủy điện, ô nhiễm nguồn nước, và đặc biệt là vấn nạn săn bắt trộm để lấy thịt và da đã khiến số lượng loài này suy giảm đáng báo động. Ngoài ra, chúng cũng thường xuyên bị mắc kẹt vào các lưới đánh cá thương mại.</p>
+                
+                <p>Bằng cách hỗ trợ các dự án bảo tồn, chúng ta có thể mở rộng các khu bảo tồn biển sinh thái, dọn sạch môi trường sống dưới nước và giáo dục cộng đồng địa phương về tầm quan trọng của loài động vật đáng yêu này.</p>
+                
+                <a href="#" class="btn-glow">Quyên Góp Ngay ➔</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL LIGHTBOX (Khung nổi để xem Video/Ảnh) -->
+    <div id="mediaModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content" id="modalBody">
+            <!-- JS sẽ bơm thẻ img vào đây -->
+        </div>
+    </div>
+
+    <!-- FOOTER (Dùng chung) -->
+    <footer class="footer-cinematic">
+        <div class="footer-noise"></div> 
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo.png" alt="AniMend Stories Logo" class="logo-img"> 
+                    <span class="brand-name">AniMend Stories</span>
+                </a>
+                <p>Kết nối những trái tim yêu thiên nhiên, lan tỏa những thước phim giải cứu chân thực và kịch tính nhất.</p>
+            </div>
+            <!-- ... Giữ nguyên phần Newsletter và Social ... -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
